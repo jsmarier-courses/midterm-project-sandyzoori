@@ -24,7 +24,12 @@ And to create an unordered list, we simply put a star (`*`) before each item.
 
 ## 1. Introduction
 
-Insert text here.
+In this assignment, I will analyze a dataset provided by the City of Ottawa, specifically focusing on the "2024 Service Requests" data from August 2024. This dataset contains records of various service requests made by residents, reflecting the city’s responsiveness to community needs. The data includes information such as the type of service requested, the date of the request, and the status of the request. 
+
+The City of Ottawa collects this data through its open data portal, which allows residents to access and engage with municipal services more transparently. This analysis will delve into the dataset to uncover trends, patterns, and potential areas for improvement in city services.
+
+The main sections of this report will include the process of importing the data, conducting a VIMO analysis, cleaning the dataset, performing exploratory data analysis, and identifying potential stories that could be explored further.
+
 
 ## 2. Getting Data
 
