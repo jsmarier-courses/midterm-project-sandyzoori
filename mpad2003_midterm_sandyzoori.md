@@ -1,55 +1,49 @@
-**Date**<br>
-**Course Code & Course Name**<br>
-**Student's First Name & Last Name**<br>
-**Presented to Jean-Sébastien Marier**<br>
+October 18th, 2024
+2003A Introductory Data Storytelling
+Sandy Zoori
+Jean Sebastien Marier
 
 # Midterm Project: Exploratory Data Analysis (EDA)
 
-Use one hashtag symbol (`#`) to create a level 1 heading like this one.
+Analysis of City of Ottawa Dataset on Garbage and Recycling Service Requests
 
 ## Foreword
 
-For this assignment, you must extract data from a dataset provided by the instructor. You must then clean and analyze the data, create exploratory charts/visualizations, and find a potential story idea. Your assignment must clearly detail your process. You are expected to write about 1500-2000 words, and to include several screen captures showing the different steps you went through. Your assignment must be written with the Markdown format and submitted on GitHub Classroom.
+This assignment explores the analysis of a dataset from the City of Ottawa, aiming to uncover insights and narratives that reflect the community's dynamics. By examining the data, I hope to highlight important trends and patterns that can inform decision-making and contribute to a better understanding of urban life in Ottawa. Through this analytical journey, I aim to enhance my skills in data storytelling and provide a clearer picture of the factors influencing our city.
 
-I have been assigning different versions of this project to my digital journalism and data storytelling students for a few years now. Its structure was inspired by the main sections/chapters of [*The Data Journalism Handbook*](https://datajournalism.com/read/handbook/one/). This version was further inspired by the [Key Capabilities in Data Science](https://extendedlearning.ubc.ca/programs/key-capabilities-data-science) program offered by the University of British Columbia (UBC).
-
-**Here are some useful resources for this assignment:**
-
-* [GitHub's *Basic writing and formatting syntax* page](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
-* [The template repository for this assignment in case you delete something by mistake](https://github.com/jsmarier/jou4100_jou4500_mpad2003_project2_template)
-
-Did you notice how to create a hyperlink? In Markdown, we put the clickable text between square brackets and the actual URL between parentheses.
-
-And to create an unordered list, we simply put a star (`*`) before each item.
 
 ## 1. Introduction
 
-In this assignment, I will analyze a dataset provided by the City of Ottawa, specifically focusing on the "2024 Service Requests" data from August 2024. This dataset contains records of various service requests made by residents, reflecting the city’s responsiveness to community needs. The data includes information such as the type of service requested, the date of the request, and the status of the request. 
+In this assignment, I will analyze a dataset from the City of Ottawa, focusing specifically on service requests related to garbage and recycling issues during August 2024. The dataset includes various service requests, including the types of issues reported, their locations, and the dates they were filed. This data was collected by the City of Ottawa through their public service reporting systems, allowing residents to submit concerns regarding waste management.
 
-The City of Ottawa collects this data through its open data portal, which allows residents to access and engage with municipal services more transparently. This analysis will delve into the dataset to uncover trends, patterns, and potential areas for improvement in city services.
-
-The main sections of this report will include the process of importing the data, conducting a VIMO analysis, cleaning the dataset, performing exploratory data analysis, and identifying potential stories that could be explored further.
+The dataset is part of a larger collection of service requests and was updated on October 3, 2024. For this analysis, I will explore the cleaning and analysis process, including generating exploratory charts and identifying potential stories within the data. I will cover the following sections: Getting Data, Understanding Data, Potential Story, and Conclusion.
 
 
 ## 2. Getting Data
 
-Use two hashtag symbols (`##`) to create a level 2 heading like this one.
+Steps on How to Import Data into Google Sheets:
 
-To include a screen capture, use the sample code below. Your images should be saved in the same folder as your `.md` file.
+Download the Dataset: Visit the City of Ottawa's open data portal and download the dataset in CSV format onto your computer.
+Open Google Sheets: Go to Google Sheets and click on "Blank Spreadsheet" to create a new spreadsheet.
+Import the Dataset:
+Click on File > Import.
+Click on Browse and select the City of Ottawa CSV file that you downloaded earlier.
+Choose "Comma" as your separator type.
+Review the Imported Data: Once the data is imported, check the first few rows to confirm that it has been imported correctly.
+Screenshot: Below is a screenshot of the dataset immediately after importation, showing the column headings and the first 20 rows of data:
 
-![](import-screen-capture.png)<br>
-*Figure 1: The "Import file" prompt on Google Sheets.*
+Public Link: You can access my Google Sheets spreadsheet using the following link: =IMPORTHTML("https://docs.google.com/spreadsheets/d/1e7Ryu3pO4VM5O9kqNR0iGk7LKg3tLzBn49_cBt8p9_U/edit?usp=sharing)
 
-**Here are examples of functions and lines of code put in grey boxes:**
 
-1. If you name a function, put it between "angled" quotation marks like this: `IMPORTHTML`.
-1. If you want to include the entire line of code, do the same thing, albeit with your entire code: `=IMPORTHTML("https://en.wikipedia.org/wiki/China"; "table", 5)`.
-1. Alternatively, you can put your code in an independent box using the template below:
+Dataset Overview:
 
-``` r
-=IMPORTHTML("https://en.wikipedia.org/wiki/China"; "table", 5)
-```
-This also shows how to create an ordered list. Simply put `1.` before each item.
+The dataset contains 261,200 rows and 11 columns (labeled A to K).
+Overall, the data appears to be well-organized and clearly labeled, making it easy to read and understand.
+However, I noticed that there are many instances of /N in columns G, H, and I, which likely indicates missing information in those fields. This will need to be addressed during the data cleaning process.
+
+
+
+
 
 ## 3. Understanding Data
 
