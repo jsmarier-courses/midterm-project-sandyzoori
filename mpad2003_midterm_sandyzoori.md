@@ -183,8 +183,13 @@ One gap I realized is that I could have included more advanced data-cleaning tec
 
 ## 6. References
 
-Include a list of your references here. Please follow [APA guidelines for references](https://apastyle.apa.org/style-grammar-guidelines/references). Hanging paragraphs aren't required though.
+Statistics Canada. (2021, September 2). Statistics: Power from data! [Educational website]. Statistics Canada. https://www150.statcan.gc.ca/n1/edu/power-pouvoir/toc-tdm/5214718-eng.htm
 
-**Here's an example:**
+Statistics Canada. (2020, September 23). Data accuracy and validation: Methods to ensure the quality of data [Educational resource]. Statistics Canada. https://www.statcan.gc.ca/en/wtc/data-literacy/catalogue/892000062020008
 
-Bounegru, L., & Gray, J. (Eds.). (2021). *The Data Journalism Handbook 2: Towards A Critical Data Practice*. Amsterdam University Press. [https://ocul-crl.primo.exlibrisgroup.com/permalink/01OCUL_CRL/hgdufh/alma991022890087305153](https://ocul-crl.primo.exlibrisgroup.com/permalink/01OCUL_CRL/hgdufh/alma991022890087305153)
+Sometimes Teaching. (2019, October 25). Data sheets - Part 1: Initial setup [Tutorial]. YouTube. https://www.youtube.com/watch?v=o1re33Ew68A
+
+Accurate Creative. (2022, November 10). City of Ottawa: Recycling video [Video]. YouTube. https://www.youtube.com/watch?v=LdjjLEN-H8I
+
+Marier, J.-S. (2021, October 9). Cleaning data in Google Sheets [Tutorial]. YouTube. https://www.youtube.com/watch?v=U4yigiawIEU
+
