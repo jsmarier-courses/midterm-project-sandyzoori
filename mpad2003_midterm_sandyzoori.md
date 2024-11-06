@@ -103,12 +103,19 @@ Longitude
 Closed Date
 I just deleted these columns because I’m only focusing on the Status, Type, and Open Date columns for my analysis. This helped clean up the sheet and made it easier to work with.
 
+![](After-deleting-columns.png)<br>
+
+
 Step 2: Removed Duplicates
 I checked to see if there were any duplicate rows (meaning the same data repeated). I did this by selecting the data and using the Remove Duplicates tool in Google Sheets. There weren’t any duplicates, but it was a good check to make sure the data wasn’t repeating itself.
 
+![](Removing-Duplicates.png)<br>
+
 Step 3: Trimmed Whitespace
-Sometimes there are extra spaces before or after the text in the cells, which could mess up sorting or filtering. So, I used Google Sheets' Trim Whitespace feature to clean up any extra spaces in the Status and Type columns.
-To do this, I selected the columns, went to Data, and clicked on Data cleanup > Trim Whitespace. This cleaned up the spaces that I couldn’t see but could cause problems when analyzing the data.
+Sometimes there are extra spaces before or after the text in the cells, which could mess up sorting or filtering. So, I used Google Sheets' Trim Whitespace feature to clean up any extra spaces in the Columns.
+To do this, I selected all the columns by left clicking on the white box, went to Data, and clicked on Data cleanup > Trim Whitespace. This cleaned up the spaces that I couldn’t see but could cause problems when analyzing the data.
+
+![](Trimmed-Whitespace.png)<br> 
 
 Step 4: Standardized Text (Find and Replace)
 There were some inconsistencies in the Status column. For example, "resolved" was sometimes written as "Resolved" with an uppercase letter, and "cancelled" was written in different ways. To fix this, I used the Find and Replace tool to make everything uniform.
