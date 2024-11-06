@@ -14,7 +14,7 @@ This assignment explores the analysis of a dataset from the City of Ottawa, aimi
 
 ## 1. Introduction
 
-In this assignment, I will be analyzing a dataset from the City of Ottawa, focusing specifically on service requests related to garbage and recycling issues during the month of August 2024. The dataset includes information on various service request types, such as missed garbage pick-up, overfull recycling bins, and street cleanliness concerns. Additionally, it records the geographical location of each request, as well as the dates and times these requests were submitted. The data was collected through the City of Ottawa’s public service reporting system, which allows residents to file complaints and requests regarding waste management issues.
+In this assignment, I will be analyzing a dataset from the **City of Ottawa**, focusing specifically on service requests related to **garbage and recycling** issues during the month of **August 2024**. The dataset includes information on various service request types, such as missed garbage pick-up, overfull recycling bins, and street cleanliness concerns. Additionally, it records the geographical location of each request, as well as the dates and times these requests were submitted. The data was collected through the City of Ottawa’s public service reporting system, which allows residents to file complaints and requests regarding waste management issues.
 This dataset was updated on October 3, 2024, and it forms part of a broader set of service requests made throughout the year. The purpose of this analysis is to clean and explore the data in order to uncover patterns, trends, and potential areas for improvement in the city’s waste management system. By analyzing the frequency and distribution of these requests, I hope to gain insights into the nature of waste management issues across Ottawa’s neighborhoods, especially during peak months like summer.
 The report will be divided into several sections: first, I will describe how I imported the data into Google Sheets and conducted an initial review; second, I will perform a detailed VIMO (Verifiability, Integrity, Methodology, Objectivity) analysis to evaluate the quality of the dataset; third, I will outline the steps taken to clean the data; and lastly, I will conduct an exploratory data analysis (EDA) to visualize trends and insights from the cleaned data.
 
@@ -61,7 +61,6 @@ There are **273,844 rows** in the dataset, so it's pretty big. Here’s what I n
 
 
 ## 3. Understanding Data
-
 ### 3.1. VIMO Analysis
 
 **Status Column (e.g., Resolved, Active, Cancelled)
@@ -132,7 +131,7 @@ I found all instances of "resolved" and changed them to "Resolved", "active" to 
 **Step 5: Split Columns (SPLIT function)**
 Some of the data in the Type column had both English and French descriptions, separated by a "|". To make this easier to work with, I used the SPLIT function to separate the English and French descriptions into two columns.
 I used this formula in a new column:
-=SPLIT(D2, "|")
+**=SPLIT(D2, "|")**
 
 ![](Split-language.png)<br>  
 
@@ -141,7 +140,7 @@ This split the text at each pipe symbol **("|")**, creating two separate columns
 
 **Step 6: Freezing Rows and Columns**
 To make it easier to navigate my big dataset, I froze the first row (the column headers) and the first column (for the service request numbers). This way, when I scroll down or across the sheet, I can always see the headers and the row numbers.
-I did this by going to View > Freeze > 1 row and 1 column.
+I did this by going to **View** > **Freeze** > **1 row** and **1 column.**
 
 ![](Freeze-row.png)<br>  
 ### 3.3. Exploratory Data Analysis (EDA)
@@ -155,15 +154,16 @@ For this analysis, I created a **pivot table** to see how service requests relat
 **Resolved Requests:** Most of the requests (68,582) have been resolved, showing that a large portion of the service requests have been taken care of.
 **Grand Total:** The total number of requests for both Garbage and Recycling combined is 72,942.
 
-**Here is my *Pivot table*:**
+*Figure 1: Pivot Table:*
 
 ![](Pivot-table.png)<br>
-*Figure 2: This pivot table shows...*
 
-**This section should also include a screen capture of your exploratory chart, like so:**
+**Exploratory chart:**
 
-![](chart-screen-capture.png)<br>
-*Figure 3: This exploratory chart shows...*
+![](Exploratory-Chart.png)<br>
+*Figure 2: This exploratory chart shows...*
+
+The exploratory chart shows the breakdown of garbage and recycling service requests in Ottawa. Most of the requests (68,582) are marked as **Resolved**, meaning the issues have been addressed. There are fewer **Active** requests (3,008), which are still being worked on, and even fewer **Cancelled** requests (1,352), which were either withdrawn or no longer needed. This suggests that while most problems are being resolved, there are still some requests that remain open or are canceled for various reasons. The chart helps us see the overall trend and gives a glimpse into how the city is managing these issues. Further analysis could help understand why certain requests are taking longer to resolve.
 
 ## 4. Potential Story
 
