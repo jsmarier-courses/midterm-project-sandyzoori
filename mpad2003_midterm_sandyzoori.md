@@ -55,8 +55,9 @@ There are **273,844 rows** in the dataset, so it's pretty big. Here’s what I n
 **Address, Latitude, and Longitude:** There are a lot of \N values in these columns, which means missing data. I’ll have to decide how to handle those.
 **Channel:** A lot of requests come from "Walk-In" and "Voice-In," and some come from "Data-In." This tells us how people submitted their service requests.
 
-**Public Link: You can access my Google Sheets spreadsheet here:**
-[View Dataset on Google Sheets](https://docs.google.com/spreadsheets/d/1hEZoNEO9x-FGYbgmq1yIWkGZqscOg1qWe9miY8Ox4As/edit?gid=123553105#gid=123553105)
+
+**You can view my dataset in Google Sheets** [here](https://docs.google.com/spreadsheets/d/1y2ITeWGAEyxCcav9_AgAIaBNpEtEGJxBUx4VH5T5e-4/edit?gid=749508674#gid=749508674).
+
 
 
 
