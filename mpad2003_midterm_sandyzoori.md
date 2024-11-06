@@ -21,39 +21,41 @@ The report will be divided into several sections: first, I will describe how I i
 
 ## 2. Getting Data
 
-To begin the analysis, I downloaded the dataset from the City of Ottawa’s open data portal, which provides a comprehensive list of service requests filed by residents in Ottawa. The dataset was made available as a CSV file. Below is a step-by-step guide for importing the dataset into Google Sheets:
+To begin the analysis, I downloaded the dataset from the **City of Ottawa’s open data portal**, which provides a comprehensive list of service requests filed by residents in Ottawa. The dataset was made available as a **CSV** file. Below is a step-by-step guide for importing the dataset into **Google Sheets**:
 Download the Dataset:
 Visit the City of Ottawa Open Data Portal and download the "2024 Service Requests" dataset in CSV format. Once downloaded, save the file on your computer.
 Open Google Sheets:
-Launch Google Sheets and create a new blank spreadsheet by clicking on "Blank Spreadsheet".
+Launch Google Sheets and create a new blank spreadsheet by clicking on **"Blank Spreadsheet"**.
 Import the Dataset:
-Click on File > Import.
-Select the Upload tab, then click Select a file from your device and choose the downloaded CSV file.
-Ensure that the separator type is set to Comma, which is the delimiter used in the CSV file.
-Select Replace spreadsheet to replace the current empty sheet with the imported data.
+Click on **File** > **Import**.
+Select the **Upload tab**, then click **Select a file** from your device and choose the **downloaded CSV file**.
+Ensure that the separator type is set to **Comma**, which is the delimiter used in the CSV file.
+Select **Replace spreadsheet** to replace the current empty sheet with the imported data.
+
 ![](City-of-ottawa-open-data-portal.png)<br>
 
 
-Review the Imported Data:
-Once the data was imported, I saw that the first row had the column headers, and the data included 11 columns in total. Here’s a quick breakdown:
-A: Service request
-B: Status
-C: Type
-D: Description
-E: Opened Date
-F: Closed Date
-G: Address
-H: Latitude
-I: Longitude
-J: Ward
-k: Channel
+**Review the Imported Data:**
+Once the data was imported, I saw that the first row had the column headers, and the data included **11 columns** in total. Here’s a quick breakdown:
+**A: Service request**
+**B: Status**
+**C: Type**
+**D: Description**
+**E: Opened Date**
+**F: Closed Date**
+**G: Address**
+**H: Latitude**
+**I: Longitude**
+**J: Ward**
+**k: Channel**
 
-There are 273,844 rows in the dataset, so it's pretty big. Here’s what I noticed after importing the data:
-Status: Most of the requests are marked as "Resolved," but there are also a lot of "Active" and "Canceled" statuses.
-Description: There’s a lot of repetition in the description column, with things like "Garbage and Recycling," "Parking Control," and "Bylaw Services." Since I’m focusing on garbage and recycling, I’ll need to filter out the other stuff.
-Address, Latitude, and Longitude: There are a lot of \N values in these columns, which means missing data. I’ll have to decide how to handle those.
-Channel: A lot of requests come from "Walk-In" and "Voice-In," and some come from "Data-In." This tells us how people submitted their service requests.
-Public Link: You can access my Google Sheets spreadsheet here:
+There are **273,844 rows** in the dataset, so it's pretty big. Here’s what I noticed after importing the data:
+**Status:** Most of the requests are marked as "Resolved," but there are also a lot of "Active" and "Canceled" statuses.
+**Description:** There’s a lot of repetition in the description column, with things like "Garbage and Recycling," "Parking Control," and "Bylaw Services." Since I’m focusing on garbage and recycling, I’ll need to filter out the other stuff.
+**Address, Latitude, and Longitude:** There are a lot of \N values in these columns, which means missing data. I’ll have to decide how to handle those.
+**Channel:** A lot of requests come from "Walk-In" and "Voice-In," and some come from "Data-In." This tells us how people submitted their service requests.
+
+**Public Link: You can access my Google Sheets spreadsheet here:**
 [View Dataset on Google Sheets](https://docs.google.com/spreadsheets/d/1hEZoNEO9x-FGYbgmq1yIWkGZqscOg1qWe9miY8Ox4As/edit?gid=123553105#gid=123553105)
 
 
@@ -62,69 +64,72 @@ Public Link: You can access my Google Sheets spreadsheet here:
 
 ### 3.1. VIMO Analysis
 
-Status Column (e.g., Resolved, Active, Cancelled)
-Verifiability:
-The "Status" column seems fine. It mostly has "Resolved," "Active," and "Cancelled," which are logical. But I need to double-check if "Active" really means the issue is still open or if it’s just an outdated status.
-Integrity:
-There aren’t any missing values in this column. But, some of the "Active" statuses might be outdated, and I’m not sure if all the "Resolved" ones mean the issue was completely fixed.
-Reliability:
-It’s generally reliable for understanding how many requests are still open vs. completed, but I’ll need to dive deeper to see if the "Active" ones are truly active.
-Type Column (e.g., Garbage and Recycling, Bylaw Services)
-Verifiability:
-The "Type" column has categories like "Garbage and Recycling," "Parking Control," and "Bylaw Services." Since I'm only looking at garbage and recycling, I’ll need to filter out the irrelevant categories.
-Integrity:
-The "Type" column has some unrelated categories, so I’ll clean those out to make sure the analysis only includes garbage and recycling requests.
-Can we rely on it for trends? (Reliability):
-Once I filter out the irrelevant categories, it’ll be reliable for tracking garbage and recycling requests.
-Description Column (e.g., Description of Request)
-Verifiability:
-The "Description" column is a bit repetitive with a lot of entries like "Garbage and Recycling," "Parking Control," and "Bylaw Services." I’ll need to clean this up and focus only on the garbage and recycling descriptions.
-Integrity:
-The descriptions are mostly accurate, but again, I’ll need to remove the ones related to parking and bylaws.
-Reliability:
-Once I clean up the column and keep only the garbage and recycling-related descriptions, it’ll be great for identifying trends.
+**Status Column (e.g., Resolved, Active, Cancelled)
+Verifiability:** The "Status" column seems fine. It mostly has "Resolved," "Active," and "Cancelled," which are logical. But I need to double-check if "Active" really means the issue is still open or if it’s just an outdated status.
+
+**Integrity:** There aren’t any missing values in this column. But, some of the "Active" statuses might be outdated, and I’m not sure if all the "Resolved" ones mean the issue was completely fixed.
+
+**Reliability:** It’s generally reliable for understanding how many requests are still open vs. completed, but I’ll need to dive deeper to see if the "Active" ones are truly active.
+
+**Type Column (e.g., Garbage and Recycling, Bylaw Services)**
+
+**Verifiability:** The "Type" column has categories like "Garbage and Recycling," "Parking Control," and "Bylaw Services." Since I'm only looking at garbage and recycling, I’ll need to filter out the irrelevant categories.
+
+**Integrity:** The "Type" column has some unrelated categories, so I’ll clean those out to make sure the analysis only includes garbage and recycling requests.
+
+**Reliability:** Once I filter out the irrelevant categories, it’ll be reliable for tracking garbage and recycling requests.
+
+**Description Column (e.g., Description of Request)**
+
+**Verifiability:** The "Description" column is a bit repetitive with a lot of entries like "Garbage and Recycling," "Parking Control," and "Bylaw Services." I’ll need to clean this up and focus only on the garbage and recycling descriptions.
+
+**Integrity:** The descriptions are mostly accurate, but again, I’ll need to remove the ones related to parking and bylaws.
+
+**Reliability:** Once I clean up the column and keep only the garbage and recycling-related descriptions, it’ll be great for identifying trends.
 Channel Column (e.g., Walk-In, Voice-In, Data-In)
 Verifiability:
-The "Channel" column tells us how the requests came in (e.g., "Walk-In," "Voice-In," "Data-In"). This is useful but not essential for the core analysis.
-Is the data complete and accurate? (Integrity):
-The data seems pretty accurate, but there are a lot of "Walk-In" and "Voice-In" channels. Some "Data-In" entries might need more explanation to understand exactly how they were submitted.
-Reliability:
-This column is good for understanding how people submitted their requests, but it won’t be the main focus of my analysis.
+
+**The "Channel" column tells us how the requests came in (e.g., "Walk-In," "Voice-In," "Data-In")**. 
+This is useful but not essential for the core analysis.
+
+**Integrity:** The data seems pretty accurate, but there are a lot of "Walk-In" and "Voice-In" channels. Some "Data-In" entries might need more explanation to understand exactly how they were submitted.
+
+**Reliability:** This column is good for understanding how people submitted their requests, but it won’t be the main focus of my analysis.
 
 ### 3.2. Cleaning Data
 
 Here’s how I cleaned the data to make it ready for analysis:
 
-Step 1: Removed Unnecessary Columns
+**Step 1: Removed Unnecessary Columns**
 I didn’t need some columns in my dataset, like:
-Address
-Latitude
-Longitude
-Closed Date
+**Address**
+**Latitude**
+**Longitude**
+**Closed Date**
 I just deleted these columns because I’m only focusing on the Status, Type, and Open Date columns for my analysis. This helped clean up the sheet and made it easier to work with.
 
 ![](After-deleting-columns.png)<br>
 
 
-Step 2: Removed Duplicates
+**Step 2: Removed Duplicates**
 I checked to see if there were any duplicate rows (meaning the same data repeated). I did this by selecting the data and using the Remove Duplicates tool in Google Sheets. There weren’t any duplicates, but it was a good check to make sure the data wasn’t repeating itself.
 
 ![](Removing-Duplicates.png)<br>
 
-Step 3: Trimmed Whitespace
+**Step 3: Trimmed Whitespace**
 Sometimes there are extra spaces before or after the text in the cells, which could mess up sorting or filtering. So, I used Google Sheets' Trim Whitespace feature to clean up any extra spaces in the Columns.
 To do this, I selected all the columns by left clicking on the white box, went to Data, and clicked on Data cleanup > Trim Whitespace. This cleaned up the spaces that I couldn’t see but could cause problems when analyzing the data.
 
 ![](Trimmed-Whitespace.png)<br> 
 
-Step 4: Standardized Text (Find and Replace)
+**Step 4: Standardized Text (Find and Replace)**
 There were some inconsistencies in the Status column. For example, "resolved" was sometimes written as "Resolved" with an uppercase letter, and "cancelled" was written in different ways. To fix this, I used the Find and Replace tool to make everything uniform.
 I found all instances of "resolved" and changed them to "Resolved", "active" to "Active", and "cancelled" to "Cancelled". This made sure the text was consistent, which is important for sorting and analysis.
 
 ![](Find-Replace.png)<br> 
 ![](Resolved-example.png)<br>  
 
-Step 5: Split Columns (SPLIT function)
+**Step 5: Split Columns (SPLIT function)**
 Some of the data in the Type column had both English and French descriptions, separated by a "|". To make this easier to work with, I used the SPLIT function to separate the English and French descriptions into two columns.
 I used this formula in a new column:
 =SPLIT(D2, "|")
@@ -132,25 +137,25 @@ I used this formula in a new column:
 ![](Split-language.png)<br>  
 
 
-This split the text at each pipe symbol ("|"), creating two separate columns with the English and French text.
+This split the text at each pipe symbol **("|")**, creating two separate columns with the English and French text.
 
-Step 6: Freezing Rows and Columns
+**Step 6: Freezing Rows and Columns**
 To make it easier to navigate my big dataset, I froze the first row (the column headers) and the first column (for the service request numbers). This way, when I scroll down or across the sheet, I can always see the headers and the row numbers.
 I did this by going to View > Freeze > 1 row and 1 column.
 
 ![](Freeze-row.png)<br>  
 ### 3.3. Exploratory Data Analysis (EDA)
 
-For this analysis, I created a pivot table to see how service requests related to garbage and recycling are doing in Ottawa. I looked at three main categories: Active, Cancelled, and Resolved requests. Here's what I found:
+For this analysis, I created a **pivot table** to see how service requests related to garbage and recycling are doing in Ottawa. I looked at three main categories: Active, Cancelled, and Resolved requests. Here's what I found:
 
 **Pivot Table Summary:**
 
-Active Requests: There are 3,008 active requests for both Garbage and Recycling. These are requests that are still open and haven't been completed yet.
-Cancelled Requests: There are 1,352 cancelled requests, meaning either the issue was fixed before the service was completed, or the request was removed for some reason.
-Resolved Requests: Most of the requests (68,582) have been resolved, showing that a large portion of the service requests have been taken care of.
-Grand Total: The total number of requests for both Garbage and Recycling combined is 72,942.
+**Active Requests:** There are 3,008 active requests for both Garbage and Recycling. These are requests that are still open and haven't been completed yet.
+**Cancelled Requests:** There are 1,352 cancelled requests, meaning either the issue was fixed before the service was completed, or the request was removed for some reason.
+**Resolved Requests:** Most of the requests (68,582) have been resolved, showing that a large portion of the service requests have been taken care of.
+**Grand Total:** The total number of requests for both Garbage and Recycling combined is 72,942.
 
-**Here is my Pivot table:**
+**Here is my *Pivot table*:**
 
 ![](Pivot-table.png)<br>
 *Figure 2: This pivot table shows...*
