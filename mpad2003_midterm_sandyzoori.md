@@ -121,10 +121,16 @@ Step 4: Standardized Text (Find and Replace)
 There were some inconsistencies in the Status column. For example, "resolved" was sometimes written as "Resolved" with an uppercase letter, and "cancelled" was written in different ways. To fix this, I used the Find and Replace tool to make everything uniform.
 I found all instances of "resolved" and changed them to "Resolved", "active" to "Active", and "cancelled" to "Cancelled". This made sure the text was consistent, which is important for sorting and analysis.
 
+![](Find-Replace.png)<br> 
+![](Resolved-example.png)<br>  
+
 Step 5: Split Columns (SPLIT function)
 Some of the data in the Type column had both English and French descriptions, separated by a "|". To make this easier to work with, I used the SPLIT function to separate the English and French descriptions into two columns.
 I used this formula in a new column:
 =SPLIT(D2, "|")
+
+![](Split-language.png)<br>  
+
 
 This split the text at each pipe symbol ("|"), creating two separate columns with the English and French text.
 
@@ -132,13 +138,21 @@ Step 6: Freezing Rows and Columns
 To make it easier to navigate my big dataset, I froze the first row (the column headers) and the first column (for the service request numbers). This way, when I scroll down or across the sheet, I can always see the headers and the row numbers.
 I did this by going to View > Freeze > 1 row and 1 column.
 
+![](Freeze-row.png)<br>  
 ### 3.3. Exploratory Data Analysis (EDA)
 
-Insert text here.
+For this analysis, I created a pivot table to see how service requests related to garbage and recycling are doing in Ottawa. I looked at three main categories: Active, Cancelled, and Resolved requests. Here's what I found:
 
-**This section should include a screen capture of your pivot table, like so:**
+**Pivot Table Summary:**
 
-![](pivot-table-screen-capture.png)<br>
+Active Requests: There are 3,008 active requests for both Garbage and Recycling. These are requests that are still open and haven't been completed yet.
+Cancelled Requests: There are 1,352 cancelled requests, meaning either the issue was fixed before the service was completed, or the request was removed for some reason.
+Resolved Requests: Most of the requests (68,582) have been resolved, showing that a large portion of the service requests have been taken care of.
+Grand Total: The total number of requests for both Garbage and Recycling combined is 72,942.
+
+**Here is my Pivot table:**
+
+![](Pivot-table.png)<br>
 *Figure 2: This pivot table shows...*
 
 **This section should also include a screen capture of your exploratory chart, like so:**
