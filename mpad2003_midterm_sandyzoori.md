@@ -31,6 +31,9 @@ Click on File > Import.
 Select the Upload tab, then click Select a file from your device and choose the downloaded CSV file.
 Ensure that the separator type is set to Comma, which is the delimiter used in the CSV file.
 Select Replace spreadsheet to replace the current empty sheet with the imported data.
+![](City-of-ottawa-open-data-portal.png)<br>
+
+
 Review the Imported Data:
 Once the data was imported, I saw that the first row had the column headers, and the data included 11 columns in total. Here’s a quick breakdown:
 A: Service request
@@ -52,6 +55,7 @@ Address, Latitude, and Longitude: There are a lot of \N values in these columns,
 Channel: A lot of requests come from "Walk-In" and "Voice-In," and some come from "Data-In." This tells us how people submitted their service requests.
 Public Link: You can access my Google Sheets spreadsheet here:
 [View Dataset on Google Sheets](https://docs.google.com/spreadsheets/d/1hEZoNEO9x-FGYbgmq1yIWkGZqscOg1qWe9miY8Ox4As/edit?gid=123553105#gid=123553105)
+
 
 
 ## 3. Understanding Data
